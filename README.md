@@ -7,4 +7,4 @@ My projects list for this course:
 | Project titles  | Details |
 | ------------- | ------------- |
 | Memory Anonymous Mutual Exclusion | Actor/Rebeca/LTL  |
-| Missionary Cannibal Problem | NuSMV/CTL  |
+| Missionary Cannibal Problem | NuSMV/LTL  |
