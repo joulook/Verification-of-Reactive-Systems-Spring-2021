@@ -1,4 +1,4 @@
-# Memory Anonymouse Mutual Exclusion
+# Memory Anonymous Mutual Exclusion
 
 My 1st project was in the "Verification of Reactive Systems" course when I was in the 2nd semester of my master's at SUT. In this project, I modeled three processes that shared a 5-cell memory without prior agreement based on "Zahra Aghazadeh, Damein Imbs, Michel Raynal, Gadi Taubenfeld, and Philipp Woelfel. Optimal Memory-Anonymous Symmetric Deadlock-Free Mutual Exclusion. PODC ’19: Proceedings of the 2019 ACM Symposium on Principles of Distributed Computing, July 2019, Pages 157–166" paper and verified safety, deadlock, and liveness LTL properties.
 
