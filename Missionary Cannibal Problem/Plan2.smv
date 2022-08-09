@@ -1,0 +1,46 @@
+MODULE main
+VAR
+    LM : 0..3;
+    LC : 0..3;
+    RM : 0..3;
+    RC : 0..3;
+    BM : 0..2;
+    BC : 0..2;
+    Boat : {left,right};
+
+INVAR 
+    BM+BC < 3 & BM+BC > 0 ;
+    
+INIT 
+    BM+BC > 0;
+
+ASSIGN
+    init(LM) := 3;
+    init(LC) := 3;
+    init(RM) := 0;
+    init(RC) := 0;
+    init(Boat) := left;
+    
+    next(LM) := case
+                    LM!=0 & LM > LC & BM+BC <2 & Boat = left: LM - BM;
+                    Boat = right : LM+BM; 
+                    TRUE : LM;
+                esac;
+                
+    next(LC) := case
+                    LC!=0 & RC < RM & BM+BC <2 & Boat = left: LC - BC;
+                    Boat = right : LC+BC;
+                    TRUE : LC;
+                esac;
+                
+    next(Boat):= case
+                    (Boat = left) & BM+BC = 2 : right;
+                    (Boat = right) & BM+BC = 1 : left;
+                    TRUE : Boat;
+                 esac;
+                 
+LTLSPEC
+    !((LM >= LC & RM >= RC) U (LM=0 & LC=0 & RM = 3 & RC = 3))                                                      
+
+
+    

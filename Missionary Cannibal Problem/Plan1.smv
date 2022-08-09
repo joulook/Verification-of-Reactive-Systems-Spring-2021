@@ -1,0 +1,22 @@
+MODULE main
+VAR
+    Missionary : 0..3;   
+    Cannibal : 0..3;   
+    BoatM : 0..2;
+    BoatC : 0..2;
+    Side : {-1,1};
+
+INIT 
+    BoatM + BoatC >= 1;
+
+ASSIGN
+    init(Missionary) := 3;
+    init(Cannibal) := 3;
+    init(Side) := 1;
+    next(Cannibal) := Cannibal - (BoatC * Side);
+    next(Missionary) := Missionary - (BoatM * Side) ;
+    next(Side) := Side * -1;
+
+LTLSPEC 
+    ! ( G(BoatM + BoatC >= 1 & BoatM + BoatC <= 2 & BoatM >=0 & BoatC >= 0) & (((Missionary > 0 & Missionary < 3) -> (Cannibal = Missionary)) U (Cannibal = 0 & Missionary = 0)) );
+
