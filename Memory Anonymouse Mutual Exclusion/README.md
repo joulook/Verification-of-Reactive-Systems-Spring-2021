@@ -222,15 +222,15 @@ property {
 
 ## Result of Model Checking
 
-| <img src="01.png" alt="Pair Game" width="600"/> | 
+| <img src="01.png" alt="Pair Game" width="800"/> | 
 |:--:| 
 | *Verification of Safety Property* |
 
-| <img src="02.png" alt="Pair Game" width="600"/> | 
+| <img src="02.png" alt="Pair Game" width="800"/> | 
 |:--:| 
 | *Verification of Deadlock Property* |
 
-| <img src="03.png" alt="Pair Game" width="600"/> | 
+| <img src="03.png" alt="Pair Game" width="800"/> | 
 |:--:| 
 | *Verification of Liveness Property* |
 
@@ -455,11 +455,11 @@ property {
 ```
 ## Result of Model Checking
 
-| <img src="04.png" alt="Pair Game" width="600"/> | 
+| <img src="04.png" alt="Pair Game" width="800"/> | 
 |:--:| 
 | *Verification of Safety Property* |
 
-| <img src="05.png" alt="Pair Game" width="600"/> | 
+| <img src="05.png" alt="Pair Game" width="800"/> | 
 |:--:| 
 | *Verification of Liveness Property* |
 
