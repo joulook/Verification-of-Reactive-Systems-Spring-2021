@@ -1,0 +1,2015 @@
+<model-checking-report>
+<system-info>
+	<total-spent-time>0</total-spent-time>
+	<reached-states>44</reached-states>
+	<reached-transitions>48</reached-transitions>
+	<consumed-mem>2816</consumed-mem>
+</system-info>
+<checked-property>
+	<type>LTL</type>
+	<name>Liveness</name>
+	<result>counter example</result>
+<options>
+	<option>Nested DFS</option>
+</options>
+</checked-property>
+<counter-example-trace>
+<state id="0" atomicpropositions="mutex1,mutex2,mutex3," >
+	<rebec name="p1">
+		<statevariables>
+			<variable name="Process.uid" type="byte">1</variable>
+			<variable name="Process.mem" type="byte[5]">[0, 0, 0, 0, 0, ]</variable>
+			<variable name="Process.add" type="byte[5]">[1, 2, 3, 4, 5, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+			<message sender="p1">init(0)</message>
+		</queue>
+	</rebec>
+	<rebec name="p2">
+		<statevariables>
+			<variable name="Process.uid" type="byte">2</variable>
+			<variable name="Process.mem" type="byte[5]">[0, 0, 0, 0, 0, ]</variable>
+			<variable name="Process.add" type="byte[5]">[2, 3, 5, 1, 4, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+			<message sender="p2">init(0)</message>
+		</queue>
+	</rebec>
+	<rebec name="p3">
+		<statevariables>
+			<variable name="Process.uid" type="byte">3</variable>
+			<variable name="Process.mem" type="byte[5]">[0, 0, 0, 0, 0, ]</variable>
+			<variable name="Process.add" type="byte[5]">[3, 1, 4, 5, 2, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+			<message sender="p3">init(0)</message>
+		</queue>
+	</rebec>
+	<rebec name="m">
+		<statevariables>
+			<variable name="Memory.reg" type="byte[5]">[0, 0, 0, 0, 0, ]</variable>
+			<variable name="Memory.swap" type="byte[5]">[0, 0, 0, 0, 0, ]</variable>
+			<variable name="Memory.p" type="byte[3]">[0, 0, 0, ]</variable>
+			<variable name="Memory.cntr" type="byte">3</variable>
+			<variable name="Memory.cv" type="byte">3</variable>
+		</statevariables>
+		<queue>
+		</queue>
+	</rebec>
+</state>
+<transition source="0" destination="3"> <messageserver sender="p1" owner="p1" title="INIT"/></transition>
+<state id="3" atomicpropositions="mutex1,mutex2,mutex3," >
+	<rebec name="p1">
+		<statevariables>
+			<variable name="Process.uid" type="byte">1</variable>
+			<variable name="Process.mem" type="byte[5]">[0, 0, 0, 0, 0, ]</variable>
+			<variable name="Process.add" type="byte[5]">[1, 2, 3, 4, 5, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+		</queue>
+	</rebec>
+	<rebec name="p2">
+		<statevariables>
+			<variable name="Process.uid" type="byte">2</variable>
+			<variable name="Process.mem" type="byte[5]">[0, 0, 0, 0, 0, ]</variable>
+			<variable name="Process.add" type="byte[5]">[2, 3, 5, 1, 4, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+			<message sender="p2">init(0)</message>
+		</queue>
+	</rebec>
+	<rebec name="p3">
+		<statevariables>
+			<variable name="Process.uid" type="byte">3</variable>
+			<variable name="Process.mem" type="byte[5]">[0, 0, 0, 0, 0, ]</variable>
+			<variable name="Process.add" type="byte[5]">[3, 1, 4, 5, 2, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+			<message sender="p3">init(0)</message>
+		</queue>
+	</rebec>
+	<rebec name="m">
+		<statevariables>
+			<variable name="Memory.reg" type="byte[5]">[0, 0, 0, 0, 0, ]</variable>
+			<variable name="Memory.swap" type="byte[5]">[0, 0, 0, 0, 0, ]</variable>
+			<variable name="Memory.p" type="byte[3]">[0, 0, 0, ]</variable>
+			<variable name="Memory.cntr" type="byte">3</variable>
+			<variable name="Memory.cv" type="byte">3</variable>
+		</statevariables>
+		<queue>
+			<message sender="p1">receive(1, 0)</message>
+		</queue>
+	</rebec>
+</state>
+<transition source="3" destination="4"> <messageserver sender="p2" owner="p2" title="INIT"/></transition>
+<state id="4" atomicpropositions="mutex1,mutex2,mutex3," >
+	<rebec name="p1">
+		<statevariables>
+			<variable name="Process.uid" type="byte">1</variable>
+			<variable name="Process.mem" type="byte[5]">[0, 0, 0, 0, 0, ]</variable>
+			<variable name="Process.add" type="byte[5]">[1, 2, 3, 4, 5, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+		</queue>
+	</rebec>
+	<rebec name="p2">
+		<statevariables>
+			<variable name="Process.uid" type="byte">2</variable>
+			<variable name="Process.mem" type="byte[5]">[0, 0, 0, 0, 0, ]</variable>
+			<variable name="Process.add" type="byte[5]">[2, 3, 5, 1, 4, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+		</queue>
+	</rebec>
+	<rebec name="p3">
+		<statevariables>
+			<variable name="Process.uid" type="byte">3</variable>
+			<variable name="Process.mem" type="byte[5]">[0, 0, 0, 0, 0, ]</variable>
+			<variable name="Process.add" type="byte[5]">[3, 1, 4, 5, 2, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+			<message sender="p3">init(0)</message>
+		</queue>
+	</rebec>
+	<rebec name="m">
+		<statevariables>
+			<variable name="Memory.reg" type="byte[5]">[0, 0, 0, 0, 0, ]</variable>
+			<variable name="Memory.swap" type="byte[5]">[0, 0, 0, 0, 0, ]</variable>
+			<variable name="Memory.p" type="byte[3]">[0, 0, 0, ]</variable>
+			<variable name="Memory.cntr" type="byte">3</variable>
+			<variable name="Memory.cv" type="byte">3</variable>
+		</statevariables>
+		<queue>
+			<message sender="p1">receive(1, 0)</message>
+			<message sender="p2">receive(2, 0)</message>
+		</queue>
+	</rebec>
+</state>
+<transition source="4" destination="5"> <messageserver sender="p3" owner="p3" title="INIT"/></transition>
+<state id="5" atomicpropositions="mutex1,mutex2,mutex3," >
+	<rebec name="p1">
+		<statevariables>
+			<variable name="Process.uid" type="byte">1</variable>
+			<variable name="Process.mem" type="byte[5]">[0, 0, 0, 0, 0, ]</variable>
+			<variable name="Process.add" type="byte[5]">[1, 2, 3, 4, 5, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+		</queue>
+	</rebec>
+	<rebec name="p2">
+		<statevariables>
+			<variable name="Process.uid" type="byte">2</variable>
+			<variable name="Process.mem" type="byte[5]">[0, 0, 0, 0, 0, ]</variable>
+			<variable name="Process.add" type="byte[5]">[2, 3, 5, 1, 4, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+		</queue>
+	</rebec>
+	<rebec name="p3">
+		<statevariables>
+			<variable name="Process.uid" type="byte">3</variable>
+			<variable name="Process.mem" type="byte[5]">[0, 0, 0, 0, 0, ]</variable>
+			<variable name="Process.add" type="byte[5]">[3, 1, 4, 5, 2, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+		</queue>
+	</rebec>
+	<rebec name="m">
+		<statevariables>
+			<variable name="Memory.reg" type="byte[5]">[0, 0, 0, 0, 0, ]</variable>
+			<variable name="Memory.swap" type="byte[5]">[0, 0, 0, 0, 0, ]</variable>
+			<variable name="Memory.p" type="byte[3]">[0, 0, 0, ]</variable>
+			<variable name="Memory.cntr" type="byte">3</variable>
+			<variable name="Memory.cv" type="byte">3</variable>
+		</statevariables>
+		<queue>
+			<message sender="p1">receive(1, 0)</message>
+			<message sender="p2">receive(2, 0)</message>
+			<message sender="p3">receive(3, 0)</message>
+		</queue>
+	</rebec>
+</state>
+<transition source="5" destination="6"> <messageserver sender="p1" owner="m" title="RECEIVE"/></transition>
+<state id="6" atomicpropositions="mutex1,mutex2,mutex3," >
+	<rebec name="p1">
+		<statevariables>
+			<variable name="Process.uid" type="byte">1</variable>
+			<variable name="Process.mem" type="byte[5]">[0, 0, 0, 0, 0, ]</variable>
+			<variable name="Process.add" type="byte[5]">[1, 2, 3, 4, 5, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+		</queue>
+	</rebec>
+	<rebec name="p2">
+		<statevariables>
+			<variable name="Process.uid" type="byte">2</variable>
+			<variable name="Process.mem" type="byte[5]">[0, 0, 0, 0, 0, ]</variable>
+			<variable name="Process.add" type="byte[5]">[2, 3, 5, 1, 4, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+		</queue>
+	</rebec>
+	<rebec name="p3">
+		<statevariables>
+			<variable name="Process.uid" type="byte">3</variable>
+			<variable name="Process.mem" type="byte[5]">[0, 0, 0, 0, 0, ]</variable>
+			<variable name="Process.add" type="byte[5]">[3, 1, 4, 5, 2, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+		</queue>
+	</rebec>
+	<rebec name="m">
+		<statevariables>
+			<variable name="Memory.reg" type="byte[5]">[1, 0, 0, 0, 0, ]</variable>
+			<variable name="Memory.swap" type="byte[5]">[0, 0, 0, 0, 0, ]</variable>
+			<variable name="Memory.p" type="byte[3]">[0, 0, 0, ]</variable>
+			<variable name="Memory.cntr" type="byte">2</variable>
+			<variable name="Memory.cv" type="byte">3</variable>
+		</statevariables>
+		<queue>
+			<message sender="p2">receive(2, 0)</message>
+			<message sender="p3">receive(3, 0)</message>
+		</queue>
+	</rebec>
+</state>
+<transition source="6" destination="7"> <messageserver sender="p2" owner="m" title="RECEIVE"/></transition>
+<state id="7" atomicpropositions="mutex1,mutex2,mutex3," >
+	<rebec name="p1">
+		<statevariables>
+			<variable name="Process.uid" type="byte">1</variable>
+			<variable name="Process.mem" type="byte[5]">[0, 0, 0, 0, 0, ]</variable>
+			<variable name="Process.add" type="byte[5]">[1, 2, 3, 4, 5, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+		</queue>
+	</rebec>
+	<rebec name="p2">
+		<statevariables>
+			<variable name="Process.uid" type="byte">2</variable>
+			<variable name="Process.mem" type="byte[5]">[0, 0, 0, 0, 0, ]</variable>
+			<variable name="Process.add" type="byte[5]">[2, 3, 5, 1, 4, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+		</queue>
+	</rebec>
+	<rebec name="p3">
+		<statevariables>
+			<variable name="Process.uid" type="byte">3</variable>
+			<variable name="Process.mem" type="byte[5]">[0, 0, 0, 0, 0, ]</variable>
+			<variable name="Process.add" type="byte[5]">[3, 1, 4, 5, 2, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+		</queue>
+	</rebec>
+	<rebec name="m">
+		<statevariables>
+			<variable name="Memory.reg" type="byte[5]">[1, 0, 0, 0, 0, ]</variable>
+			<variable name="Memory.swap" type="byte[5]">[0, 0, 0, 0, 0, ]</variable>
+			<variable name="Memory.p" type="byte[3]">[0, 0, 0, ]</variable>
+			<variable name="Memory.cntr" type="byte">1</variable>
+			<variable name="Memory.cv" type="byte">3</variable>
+		</statevariables>
+		<queue>
+			<message sender="p3">receive(3, 0)</message>
+		</queue>
+	</rebec>
+</state>
+<transition source="7" destination="8"> <messageserver sender="p3" owner="m" title="RECEIVE"/></transition>
+<state id="8" atomicpropositions="mutex1,mutex2,mutex3," >
+	<rebec name="p1">
+		<statevariables>
+			<variable name="Process.uid" type="byte">1</variable>
+			<variable name="Process.mem" type="byte[5]">[0, 0, 0, 0, 0, ]</variable>
+			<variable name="Process.add" type="byte[5]">[1, 2, 3, 4, 5, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+			<message sender="m">get(1, 0)</message>
+		</queue>
+	</rebec>
+	<rebec name="p2">
+		<statevariables>
+			<variable name="Process.uid" type="byte">2</variable>
+			<variable name="Process.mem" type="byte[5]">[0, 0, 0, 0, 0, ]</variable>
+			<variable name="Process.add" type="byte[5]">[2, 3, 5, 1, 4, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+			<message sender="m">get(1, 0)</message>
+		</queue>
+	</rebec>
+	<rebec name="p3">
+		<statevariables>
+			<variable name="Process.uid" type="byte">3</variable>
+			<variable name="Process.mem" type="byte[5]">[0, 0, 0, 0, 0, ]</variable>
+			<variable name="Process.add" type="byte[5]">[3, 1, 4, 5, 2, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+			<message sender="m">get(1, 0)</message>
+		</queue>
+	</rebec>
+	<rebec name="m">
+		<statevariables>
+			<variable name="Memory.reg" type="byte[5]">[1, 0, 0, 0, 0, ]</variable>
+			<variable name="Memory.swap" type="byte[5]">[0, 0, 0, 0, 0, ]</variable>
+			<variable name="Memory.p" type="byte[3]">[0, 0, 0, ]</variable>
+			<variable name="Memory.cntr" type="byte">3</variable>
+			<variable name="Memory.cv" type="byte">3</variable>
+		</statevariables>
+		<queue>
+		</queue>
+	</rebec>
+</state>
+<transition source="8" destination="9"> <messageserver sender="m" owner="p1" title="GET"/></transition>
+<state id="9" atomicpropositions="mutex1,mutex2,mutex3," >
+	<rebec name="p1">
+		<statevariables>
+			<variable name="Process.uid" type="byte">1</variable>
+			<variable name="Process.mem" type="byte[5]">[1, 0, 0, 0, 0, ]</variable>
+			<variable name="Process.add" type="byte[5]">[1, 2, 3, 4, 5, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+		</queue>
+	</rebec>
+	<rebec name="p2">
+		<statevariables>
+			<variable name="Process.uid" type="byte">2</variable>
+			<variable name="Process.mem" type="byte[5]">[0, 0, 0, 0, 0, ]</variable>
+			<variable name="Process.add" type="byte[5]">[2, 3, 5, 1, 4, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+			<message sender="m">get(1, 0)</message>
+		</queue>
+	</rebec>
+	<rebec name="p3">
+		<statevariables>
+			<variable name="Process.uid" type="byte">3</variable>
+			<variable name="Process.mem" type="byte[5]">[0, 0, 0, 0, 0, ]</variable>
+			<variable name="Process.add" type="byte[5]">[3, 1, 4, 5, 2, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+			<message sender="m">get(1, 0)</message>
+		</queue>
+	</rebec>
+	<rebec name="m">
+		<statevariables>
+			<variable name="Memory.reg" type="byte[5]">[1, 0, 0, 0, 0, ]</variable>
+			<variable name="Memory.swap" type="byte[5]">[0, 0, 0, 0, 0, ]</variable>
+			<variable name="Memory.p" type="byte[3]">[0, 0, 0, ]</variable>
+			<variable name="Memory.cntr" type="byte">3</variable>
+			<variable name="Memory.cv" type="byte">3</variable>
+		</statevariables>
+		<queue>
+			<message sender="p1">receive(1, 1)</message>
+		</queue>
+	</rebec>
+</state>
+<transition source="9" destination="10"> <messageserver sender="m" owner="p2" title="GET"/></transition>
+<state id="10" atomicpropositions="mutex1,mutex2,mutex3," >
+	<rebec name="p1">
+		<statevariables>
+			<variable name="Process.uid" type="byte">1</variable>
+			<variable name="Process.mem" type="byte[5]">[1, 0, 0, 0, 0, ]</variable>
+			<variable name="Process.add" type="byte[5]">[1, 2, 3, 4, 5, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+		</queue>
+	</rebec>
+	<rebec name="p2">
+		<statevariables>
+			<variable name="Process.uid" type="byte">2</variable>
+			<variable name="Process.mem" type="byte[5]">[0, 1, 0, 0, 0, ]</variable>
+			<variable name="Process.add" type="byte[5]">[2, 3, 5, 1, 4, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+		</queue>
+	</rebec>
+	<rebec name="p3">
+		<statevariables>
+			<variable name="Process.uid" type="byte">3</variable>
+			<variable name="Process.mem" type="byte[5]">[0, 0, 0, 0, 0, ]</variable>
+			<variable name="Process.add" type="byte[5]">[3, 1, 4, 5, 2, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+			<message sender="m">get(1, 0)</message>
+		</queue>
+	</rebec>
+	<rebec name="m">
+		<statevariables>
+			<variable name="Memory.reg" type="byte[5]">[1, 0, 0, 0, 0, ]</variable>
+			<variable name="Memory.swap" type="byte[5]">[0, 0, 0, 0, 0, ]</variable>
+			<variable name="Memory.p" type="byte[3]">[0, 0, 0, ]</variable>
+			<variable name="Memory.cntr" type="byte">3</variable>
+			<variable name="Memory.cv" type="byte">3</variable>
+		</statevariables>
+		<queue>
+			<message sender="p1">receive(1, 1)</message>
+			<message sender="p2">receive(2, 1)</message>
+		</queue>
+	</rebec>
+</state>
+<transition source="10" destination="11"> <messageserver sender="m" owner="p3" title="GET"/></transition>
+<state id="11" atomicpropositions="mutex1,mutex2,mutex3," >
+	<rebec name="p1">
+		<statevariables>
+			<variable name="Process.uid" type="byte">1</variable>
+			<variable name="Process.mem" type="byte[5]">[1, 0, 0, 0, 0, ]</variable>
+			<variable name="Process.add" type="byte[5]">[1, 2, 3, 4, 5, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+		</queue>
+	</rebec>
+	<rebec name="p2">
+		<statevariables>
+			<variable name="Process.uid" type="byte">2</variable>
+			<variable name="Process.mem" type="byte[5]">[0, 1, 0, 0, 0, ]</variable>
+			<variable name="Process.add" type="byte[5]">[2, 3, 5, 1, 4, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+		</queue>
+	</rebec>
+	<rebec name="p3">
+		<statevariables>
+			<variable name="Process.uid" type="byte">3</variable>
+			<variable name="Process.mem" type="byte[5]">[0, 0, 1, 0, 0, ]</variable>
+			<variable name="Process.add" type="byte[5]">[3, 1, 4, 5, 2, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+		</queue>
+	</rebec>
+	<rebec name="m">
+		<statevariables>
+			<variable name="Memory.reg" type="byte[5]">[1, 0, 0, 0, 0, ]</variable>
+			<variable name="Memory.swap" type="byte[5]">[0, 0, 0, 0, 0, ]</variable>
+			<variable name="Memory.p" type="byte[3]">[0, 0, 0, ]</variable>
+			<variable name="Memory.cntr" type="byte">3</variable>
+			<variable name="Memory.cv" type="byte">3</variable>
+		</statevariables>
+		<queue>
+			<message sender="p1">receive(1, 1)</message>
+			<message sender="p2">receive(2, 1)</message>
+			<message sender="p3">receive(3, 1)</message>
+		</queue>
+	</rebec>
+</state>
+<transition source="11" destination="12"> <messageserver sender="p1" owner="m" title="RECEIVE"/></transition>
+<state id="12" atomicpropositions="mutex1,mutex2,mutex3," >
+	<rebec name="p1">
+		<statevariables>
+			<variable name="Process.uid" type="byte">1</variable>
+			<variable name="Process.mem" type="byte[5]">[1, 0, 0, 0, 0, ]</variable>
+			<variable name="Process.add" type="byte[5]">[1, 2, 3, 4, 5, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+		</queue>
+	</rebec>
+	<rebec name="p2">
+		<statevariables>
+			<variable name="Process.uid" type="byte">2</variable>
+			<variable name="Process.mem" type="byte[5]">[0, 1, 0, 0, 0, ]</variable>
+			<variable name="Process.add" type="byte[5]">[2, 3, 5, 1, 4, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+		</queue>
+	</rebec>
+	<rebec name="p3">
+		<statevariables>
+			<variable name="Process.uid" type="byte">3</variable>
+			<variable name="Process.mem" type="byte[5]">[0, 0, 1, 0, 0, ]</variable>
+			<variable name="Process.add" type="byte[5]">[3, 1, 4, 5, 2, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+		</queue>
+	</rebec>
+	<rebec name="m">
+		<statevariables>
+			<variable name="Memory.reg" type="byte[5]">[1, 1, 0, 0, 0, ]</variable>
+			<variable name="Memory.swap" type="byte[5]">[0, 0, 0, 0, 0, ]</variable>
+			<variable name="Memory.p" type="byte[3]">[0, 0, 0, ]</variable>
+			<variable name="Memory.cntr" type="byte">2</variable>
+			<variable name="Memory.cv" type="byte">3</variable>
+		</statevariables>
+		<queue>
+			<message sender="p2">receive(2, 1)</message>
+			<message sender="p3">receive(3, 1)</message>
+		</queue>
+	</rebec>
+</state>
+<transition source="12" destination="13"> <messageserver sender="p2" owner="m" title="RECEIVE"/></transition>
+<state id="13" atomicpropositions="mutex1,mutex2,mutex3," >
+	<rebec name="p1">
+		<statevariables>
+			<variable name="Process.uid" type="byte">1</variable>
+			<variable name="Process.mem" type="byte[5]">[1, 0, 0, 0, 0, ]</variable>
+			<variable name="Process.add" type="byte[5]">[1, 2, 3, 4, 5, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+		</queue>
+	</rebec>
+	<rebec name="p2">
+		<statevariables>
+			<variable name="Process.uid" type="byte">2</variable>
+			<variable name="Process.mem" type="byte[5]">[0, 1, 0, 0, 0, ]</variable>
+			<variable name="Process.add" type="byte[5]">[2, 3, 5, 1, 4, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+		</queue>
+	</rebec>
+	<rebec name="p3">
+		<statevariables>
+			<variable name="Process.uid" type="byte">3</variable>
+			<variable name="Process.mem" type="byte[5]">[0, 0, 1, 0, 0, ]</variable>
+			<variable name="Process.add" type="byte[5]">[3, 1, 4, 5, 2, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+		</queue>
+	</rebec>
+	<rebec name="m">
+		<statevariables>
+			<variable name="Memory.reg" type="byte[5]">[1, 1, 0, 0, 0, ]</variable>
+			<variable name="Memory.swap" type="byte[5]">[0, 0, 0, 0, 0, ]</variable>
+			<variable name="Memory.p" type="byte[3]">[0, 0, 0, ]</variable>
+			<variable name="Memory.cntr" type="byte">1</variable>
+			<variable name="Memory.cv" type="byte">3</variable>
+		</statevariables>
+		<queue>
+			<message sender="p3">receive(3, 1)</message>
+		</queue>
+	</rebec>
+</state>
+<transition source="13" destination="14"> <messageserver sender="p3" owner="m" title="RECEIVE"/></transition>
+<state id="14" atomicpropositions="mutex1,mutex2,mutex3," >
+	<rebec name="p1">
+		<statevariables>
+			<variable name="Process.uid" type="byte">1</variable>
+			<variable name="Process.mem" type="byte[5]">[1, 0, 0, 0, 0, ]</variable>
+			<variable name="Process.add" type="byte[5]">[1, 2, 3, 4, 5, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+			<message sender="m">get(1, 1)</message>
+		</queue>
+	</rebec>
+	<rebec name="p2">
+		<statevariables>
+			<variable name="Process.uid" type="byte">2</variable>
+			<variable name="Process.mem" type="byte[5]">[0, 1, 0, 0, 0, ]</variable>
+			<variable name="Process.add" type="byte[5]">[2, 3, 5, 1, 4, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+			<message sender="m">get(1, 1)</message>
+		</queue>
+	</rebec>
+	<rebec name="p3">
+		<statevariables>
+			<variable name="Process.uid" type="byte">3</variable>
+			<variable name="Process.mem" type="byte[5]">[0, 0, 1, 0, 0, ]</variable>
+			<variable name="Process.add" type="byte[5]">[3, 1, 4, 5, 2, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+			<message sender="m">get(1, 1)</message>
+		</queue>
+	</rebec>
+	<rebec name="m">
+		<statevariables>
+			<variable name="Memory.reg" type="byte[5]">[1, 1, 0, 0, 0, ]</variable>
+			<variable name="Memory.swap" type="byte[5]">[0, 0, 0, 0, 0, ]</variable>
+			<variable name="Memory.p" type="byte[3]">[0, 0, 0, ]</variable>
+			<variable name="Memory.cntr" type="byte">3</variable>
+			<variable name="Memory.cv" type="byte">3</variable>
+		</statevariables>
+		<queue>
+		</queue>
+	</rebec>
+</state>
+<transition source="14" destination="15"> <messageserver sender="m" owner="p1" title="GET"/></transition>
+<state id="15" atomicpropositions="mutex1,mutex2,mutex3," >
+	<rebec name="p1">
+		<statevariables>
+			<variable name="Process.uid" type="byte">1</variable>
+			<variable name="Process.mem" type="byte[5]">[1, 1, 0, 0, 0, ]</variable>
+			<variable name="Process.add" type="byte[5]">[1, 2, 3, 4, 5, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+		</queue>
+	</rebec>
+	<rebec name="p2">
+		<statevariables>
+			<variable name="Process.uid" type="byte">2</variable>
+			<variable name="Process.mem" type="byte[5]">[0, 1, 0, 0, 0, ]</variable>
+			<variable name="Process.add" type="byte[5]">[2, 3, 5, 1, 4, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+			<message sender="m">get(1, 1)</message>
+		</queue>
+	</rebec>
+	<rebec name="p3">
+		<statevariables>
+			<variable name="Process.uid" type="byte">3</variable>
+			<variable name="Process.mem" type="byte[5]">[0, 0, 1, 0, 0, ]</variable>
+			<variable name="Process.add" type="byte[5]">[3, 1, 4, 5, 2, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+			<message sender="m">get(1, 1)</message>
+		</queue>
+	</rebec>
+	<rebec name="m">
+		<statevariables>
+			<variable name="Memory.reg" type="byte[5]">[1, 1, 0, 0, 0, ]</variable>
+			<variable name="Memory.swap" type="byte[5]">[0, 0, 0, 0, 0, ]</variable>
+			<variable name="Memory.p" type="byte[3]">[0, 0, 0, ]</variable>
+			<variable name="Memory.cntr" type="byte">3</variable>
+			<variable name="Memory.cv" type="byte">3</variable>
+		</statevariables>
+		<queue>
+			<message sender="p1">receive(1, 2)</message>
+		</queue>
+	</rebec>
+</state>
+<transition source="15" destination="16"> <messageserver sender="m" owner="p2" title="GET"/></transition>
+<state id="16" atomicpropositions="mutex1,mutex2,mutex3," >
+	<rebec name="p1">
+		<statevariables>
+			<variable name="Process.uid" type="byte">1</variable>
+			<variable name="Process.mem" type="byte[5]">[1, 1, 0, 0, 0, ]</variable>
+			<variable name="Process.add" type="byte[5]">[1, 2, 3, 4, 5, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+		</queue>
+	</rebec>
+	<rebec name="p2">
+		<statevariables>
+			<variable name="Process.uid" type="byte">2</variable>
+			<variable name="Process.mem" type="byte[5]">[0, 1, 1, 0, 0, ]</variable>
+			<variable name="Process.add" type="byte[5]">[2, 3, 5, 1, 4, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+		</queue>
+	</rebec>
+	<rebec name="p3">
+		<statevariables>
+			<variable name="Process.uid" type="byte">3</variable>
+			<variable name="Process.mem" type="byte[5]">[0, 0, 1, 0, 0, ]</variable>
+			<variable name="Process.add" type="byte[5]">[3, 1, 4, 5, 2, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+			<message sender="m">get(1, 1)</message>
+		</queue>
+	</rebec>
+	<rebec name="m">
+		<statevariables>
+			<variable name="Memory.reg" type="byte[5]">[1, 1, 0, 0, 0, ]</variable>
+			<variable name="Memory.swap" type="byte[5]">[0, 0, 0, 0, 0, ]</variable>
+			<variable name="Memory.p" type="byte[3]">[0, 0, 0, ]</variable>
+			<variable name="Memory.cntr" type="byte">3</variable>
+			<variable name="Memory.cv" type="byte">3</variable>
+		</statevariables>
+		<queue>
+			<message sender="p1">receive(1, 2)</message>
+			<message sender="p2">receive(2, 2)</message>
+		</queue>
+	</rebec>
+</state>
+<transition source="16" destination="17"> <messageserver sender="m" owner="p3" title="GET"/></transition>
+<state id="17" atomicpropositions="mutex1,mutex2,mutex3," >
+	<rebec name="p1">
+		<statevariables>
+			<variable name="Process.uid" type="byte">1</variable>
+			<variable name="Process.mem" type="byte[5]">[1, 1, 0, 0, 0, ]</variable>
+			<variable name="Process.add" type="byte[5]">[1, 2, 3, 4, 5, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+		</queue>
+	</rebec>
+	<rebec name="p2">
+		<statevariables>
+			<variable name="Process.uid" type="byte">2</variable>
+			<variable name="Process.mem" type="byte[5]">[0, 1, 1, 0, 0, ]</variable>
+			<variable name="Process.add" type="byte[5]">[2, 3, 5, 1, 4, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+		</queue>
+	</rebec>
+	<rebec name="p3">
+		<statevariables>
+			<variable name="Process.uid" type="byte">3</variable>
+			<variable name="Process.mem" type="byte[5]">[1, 0, 1, 0, 0, ]</variable>
+			<variable name="Process.add" type="byte[5]">[3, 1, 4, 5, 2, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+		</queue>
+	</rebec>
+	<rebec name="m">
+		<statevariables>
+			<variable name="Memory.reg" type="byte[5]">[1, 1, 0, 0, 0, ]</variable>
+			<variable name="Memory.swap" type="byte[5]">[0, 0, 0, 0, 0, ]</variable>
+			<variable name="Memory.p" type="byte[3]">[0, 0, 0, ]</variable>
+			<variable name="Memory.cntr" type="byte">3</variable>
+			<variable name="Memory.cv" type="byte">3</variable>
+		</statevariables>
+		<queue>
+			<message sender="p1">receive(1, 2)</message>
+			<message sender="p2">receive(2, 2)</message>
+			<message sender="p3">receive(3, 2)</message>
+		</queue>
+	</rebec>
+</state>
+<transition source="17" destination="18"> <messageserver sender="p1" owner="m" title="RECEIVE"/></transition>
+<state id="18" atomicpropositions="mutex1,mutex2,mutex3," >
+	<rebec name="p1">
+		<statevariables>
+			<variable name="Process.uid" type="byte">1</variable>
+			<variable name="Process.mem" type="byte[5]">[1, 1, 0, 0, 0, ]</variable>
+			<variable name="Process.add" type="byte[5]">[1, 2, 3, 4, 5, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+		</queue>
+	</rebec>
+	<rebec name="p2">
+		<statevariables>
+			<variable name="Process.uid" type="byte">2</variable>
+			<variable name="Process.mem" type="byte[5]">[0, 1, 1, 0, 0, ]</variable>
+			<variable name="Process.add" type="byte[5]">[2, 3, 5, 1, 4, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+		</queue>
+	</rebec>
+	<rebec name="p3">
+		<statevariables>
+			<variable name="Process.uid" type="byte">3</variable>
+			<variable name="Process.mem" type="byte[5]">[1, 0, 1, 0, 0, ]</variable>
+			<variable name="Process.add" type="byte[5]">[3, 1, 4, 5, 2, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+		</queue>
+	</rebec>
+	<rebec name="m">
+		<statevariables>
+			<variable name="Memory.reg" type="byte[5]">[1, 1, 1, 0, 0, ]</variable>
+			<variable name="Memory.swap" type="byte[5]">[0, 0, 0, 0, 0, ]</variable>
+			<variable name="Memory.p" type="byte[3]">[0, 0, 0, ]</variable>
+			<variable name="Memory.cntr" type="byte">2</variable>
+			<variable name="Memory.cv" type="byte">3</variable>
+		</statevariables>
+		<queue>
+			<message sender="p2">receive(2, 2)</message>
+			<message sender="p3">receive(3, 2)</message>
+		</queue>
+	</rebec>
+</state>
+<transition source="18" destination="19"> <messageserver sender="p2" owner="m" title="RECEIVE"/></transition>
+<state id="19" atomicpropositions="mutex1,mutex2,mutex3," >
+	<rebec name="p1">
+		<statevariables>
+			<variable name="Process.uid" type="byte">1</variable>
+			<variable name="Process.mem" type="byte[5]">[1, 1, 0, 0, 0, ]</variable>
+			<variable name="Process.add" type="byte[5]">[1, 2, 3, 4, 5, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+		</queue>
+	</rebec>
+	<rebec name="p2">
+		<statevariables>
+			<variable name="Process.uid" type="byte">2</variable>
+			<variable name="Process.mem" type="byte[5]">[0, 1, 1, 0, 0, ]</variable>
+			<variable name="Process.add" type="byte[5]">[2, 3, 5, 1, 4, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+		</queue>
+	</rebec>
+	<rebec name="p3">
+		<statevariables>
+			<variable name="Process.uid" type="byte">3</variable>
+			<variable name="Process.mem" type="byte[5]">[1, 0, 1, 0, 0, ]</variable>
+			<variable name="Process.add" type="byte[5]">[3, 1, 4, 5, 2, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+		</queue>
+	</rebec>
+	<rebec name="m">
+		<statevariables>
+			<variable name="Memory.reg" type="byte[5]">[1, 1, 1, 0, 0, ]</variable>
+			<variable name="Memory.swap" type="byte[5]">[0, 0, 0, 0, 0, ]</variable>
+			<variable name="Memory.p" type="byte[3]">[0, 0, 0, ]</variable>
+			<variable name="Memory.cntr" type="byte">1</variable>
+			<variable name="Memory.cv" type="byte">3</variable>
+		</statevariables>
+		<queue>
+			<message sender="p3">receive(3, 2)</message>
+		</queue>
+	</rebec>
+</state>
+<transition source="19" destination="20"> <messageserver sender="p3" owner="m" title="RECEIVE"/></transition>
+<state id="20" atomicpropositions="mutex1,mutex2,mutex3," >
+	<rebec name="p1">
+		<statevariables>
+			<variable name="Process.uid" type="byte">1</variable>
+			<variable name="Process.mem" type="byte[5]">[1, 1, 0, 0, 0, ]</variable>
+			<variable name="Process.add" type="byte[5]">[1, 2, 3, 4, 5, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+			<message sender="m">get(1, 2)</message>
+		</queue>
+	</rebec>
+	<rebec name="p2">
+		<statevariables>
+			<variable name="Process.uid" type="byte">2</variable>
+			<variable name="Process.mem" type="byte[5]">[0, 1, 1, 0, 0, ]</variable>
+			<variable name="Process.add" type="byte[5]">[2, 3, 5, 1, 4, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+			<message sender="m">get(1, 2)</message>
+		</queue>
+	</rebec>
+	<rebec name="p3">
+		<statevariables>
+			<variable name="Process.uid" type="byte">3</variable>
+			<variable name="Process.mem" type="byte[5]">[1, 0, 1, 0, 0, ]</variable>
+			<variable name="Process.add" type="byte[5]">[3, 1, 4, 5, 2, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+			<message sender="m">get(1, 2)</message>
+		</queue>
+	</rebec>
+	<rebec name="m">
+		<statevariables>
+			<variable name="Memory.reg" type="byte[5]">[1, 1, 1, 0, 0, ]</variable>
+			<variable name="Memory.swap" type="byte[5]">[0, 0, 0, 0, 0, ]</variable>
+			<variable name="Memory.p" type="byte[3]">[0, 0, 0, ]</variable>
+			<variable name="Memory.cntr" type="byte">3</variable>
+			<variable name="Memory.cv" type="byte">3</variable>
+		</statevariables>
+		<queue>
+		</queue>
+	</rebec>
+</state>
+<transition source="20" destination="21"> <messageserver sender="m" owner="p1" title="GET"/></transition>
+<state id="21" atomicpropositions="mutex1,mutex2,mutex3," >
+	<rebec name="p1">
+		<statevariables>
+			<variable name="Process.uid" type="byte">1</variable>
+			<variable name="Process.mem" type="byte[5]">[1, 1, 1, 0, 0, ]</variable>
+			<variable name="Process.add" type="byte[5]">[1, 2, 3, 4, 5, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+		</queue>
+	</rebec>
+	<rebec name="p2">
+		<statevariables>
+			<variable name="Process.uid" type="byte">2</variable>
+			<variable name="Process.mem" type="byte[5]">[0, 1, 1, 0, 0, ]</variable>
+			<variable name="Process.add" type="byte[5]">[2, 3, 5, 1, 4, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+			<message sender="m">get(1, 2)</message>
+		</queue>
+	</rebec>
+	<rebec name="p3">
+		<statevariables>
+			<variable name="Process.uid" type="byte">3</variable>
+			<variable name="Process.mem" type="byte[5]">[1, 0, 1, 0, 0, ]</variable>
+			<variable name="Process.add" type="byte[5]">[3, 1, 4, 5, 2, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+			<message sender="m">get(1, 2)</message>
+		</queue>
+	</rebec>
+	<rebec name="m">
+		<statevariables>
+			<variable name="Memory.reg" type="byte[5]">[1, 1, 1, 0, 0, ]</variable>
+			<variable name="Memory.swap" type="byte[5]">[0, 0, 0, 0, 0, ]</variable>
+			<variable name="Memory.p" type="byte[3]">[0, 0, 0, ]</variable>
+			<variable name="Memory.cntr" type="byte">3</variable>
+			<variable name="Memory.cv" type="byte">3</variable>
+		</statevariables>
+		<queue>
+			<message sender="p1">receive(1, 3)</message>
+		</queue>
+	</rebec>
+</state>
+<transition source="21" destination="22"> <messageserver sender="m" owner="p2" title="GET"/></transition>
+<state id="22" atomicpropositions="mutex1,mutex2,mutex3," >
+	<rebec name="p1">
+		<statevariables>
+			<variable name="Process.uid" type="byte">1</variable>
+			<variable name="Process.mem" type="byte[5]">[1, 1, 1, 0, 0, ]</variable>
+			<variable name="Process.add" type="byte[5]">[1, 2, 3, 4, 5, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+		</queue>
+	</rebec>
+	<rebec name="p2">
+		<statevariables>
+			<variable name="Process.uid" type="byte">2</variable>
+			<variable name="Process.mem" type="byte[5]">[0, 1, 1, 0, 1, ]</variable>
+			<variable name="Process.add" type="byte[5]">[2, 3, 5, 1, 4, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+		</queue>
+	</rebec>
+	<rebec name="p3">
+		<statevariables>
+			<variable name="Process.uid" type="byte">3</variable>
+			<variable name="Process.mem" type="byte[5]">[1, 0, 1, 0, 0, ]</variable>
+			<variable name="Process.add" type="byte[5]">[3, 1, 4, 5, 2, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+			<message sender="m">get(1, 2)</message>
+		</queue>
+	</rebec>
+	<rebec name="m">
+		<statevariables>
+			<variable name="Memory.reg" type="byte[5]">[1, 1, 1, 0, 0, ]</variable>
+			<variable name="Memory.swap" type="byte[5]">[0, 0, 0, 0, 0, ]</variable>
+			<variable name="Memory.p" type="byte[3]">[0, 0, 0, ]</variable>
+			<variable name="Memory.cntr" type="byte">3</variable>
+			<variable name="Memory.cv" type="byte">3</variable>
+		</statevariables>
+		<queue>
+			<message sender="p1">receive(1, 3)</message>
+			<message sender="p2">receive(2, 3)</message>
+		</queue>
+	</rebec>
+</state>
+<transition source="22" destination="23"> <messageserver sender="m" owner="p3" title="GET"/></transition>
+<state id="23" atomicpropositions="mutex1,mutex2,mutex3," >
+	<rebec name="p1">
+		<statevariables>
+			<variable name="Process.uid" type="byte">1</variable>
+			<variable name="Process.mem" type="byte[5]">[1, 1, 1, 0, 0, ]</variable>
+			<variable name="Process.add" type="byte[5]">[1, 2, 3, 4, 5, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+		</queue>
+	</rebec>
+	<rebec name="p2">
+		<statevariables>
+			<variable name="Process.uid" type="byte">2</variable>
+			<variable name="Process.mem" type="byte[5]">[0, 1, 1, 0, 1, ]</variable>
+			<variable name="Process.add" type="byte[5]">[2, 3, 5, 1, 4, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+		</queue>
+	</rebec>
+	<rebec name="p3">
+		<statevariables>
+			<variable name="Process.uid" type="byte">3</variable>
+			<variable name="Process.mem" type="byte[5]">[1, 0, 1, 1, 0, ]</variable>
+			<variable name="Process.add" type="byte[5]">[3, 1, 4, 5, 2, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+		</queue>
+	</rebec>
+	<rebec name="m">
+		<statevariables>
+			<variable name="Memory.reg" type="byte[5]">[1, 1, 1, 0, 0, ]</variable>
+			<variable name="Memory.swap" type="byte[5]">[0, 0, 0, 0, 0, ]</variable>
+			<variable name="Memory.p" type="byte[3]">[0, 0, 0, ]</variable>
+			<variable name="Memory.cntr" type="byte">3</variable>
+			<variable name="Memory.cv" type="byte">3</variable>
+		</statevariables>
+		<queue>
+			<message sender="p1">receive(1, 3)</message>
+			<message sender="p2">receive(2, 3)</message>
+			<message sender="p3">receive(3, 3)</message>
+		</queue>
+	</rebec>
+</state>
+<transition source="23" destination="24"> <messageserver sender="p1" owner="m" title="RECEIVE"/></transition>
+<state id="24" atomicpropositions="mutex1,mutex2,mutex3," >
+	<rebec name="p1">
+		<statevariables>
+			<variable name="Process.uid" type="byte">1</variable>
+			<variable name="Process.mem" type="byte[5]">[1, 1, 1, 0, 0, ]</variable>
+			<variable name="Process.add" type="byte[5]">[1, 2, 3, 4, 5, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+		</queue>
+	</rebec>
+	<rebec name="p2">
+		<statevariables>
+			<variable name="Process.uid" type="byte">2</variable>
+			<variable name="Process.mem" type="byte[5]">[0, 1, 1, 0, 1, ]</variable>
+			<variable name="Process.add" type="byte[5]">[2, 3, 5, 1, 4, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+		</queue>
+	</rebec>
+	<rebec name="p3">
+		<statevariables>
+			<variable name="Process.uid" type="byte">3</variable>
+			<variable name="Process.mem" type="byte[5]">[1, 0, 1, 1, 0, ]</variable>
+			<variable name="Process.add" type="byte[5]">[3, 1, 4, 5, 2, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+		</queue>
+	</rebec>
+	<rebec name="m">
+		<statevariables>
+			<variable name="Memory.reg" type="byte[5]">[1, 1, 1, 1, 0, ]</variable>
+			<variable name="Memory.swap" type="byte[5]">[0, 0, 0, 0, 0, ]</variable>
+			<variable name="Memory.p" type="byte[3]">[0, 0, 0, ]</variable>
+			<variable name="Memory.cntr" type="byte">2</variable>
+			<variable name="Memory.cv" type="byte">3</variable>
+		</statevariables>
+		<queue>
+			<message sender="p2">receive(2, 3)</message>
+			<message sender="p3">receive(3, 3)</message>
+		</queue>
+	</rebec>
+</state>
+<transition source="24" destination="25"> <messageserver sender="p2" owner="m" title="RECEIVE"/></transition>
+<state id="25" atomicpropositions="mutex1,mutex2,mutex3," >
+	<rebec name="p1">
+		<statevariables>
+			<variable name="Process.uid" type="byte">1</variable>
+			<variable name="Process.mem" type="byte[5]">[1, 1, 1, 0, 0, ]</variable>
+			<variable name="Process.add" type="byte[5]">[1, 2, 3, 4, 5, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+		</queue>
+	</rebec>
+	<rebec name="p2">
+		<statevariables>
+			<variable name="Process.uid" type="byte">2</variable>
+			<variable name="Process.mem" type="byte[5]">[0, 1, 1, 0, 1, ]</variable>
+			<variable name="Process.add" type="byte[5]">[2, 3, 5, 1, 4, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+		</queue>
+	</rebec>
+	<rebec name="p3">
+		<statevariables>
+			<variable name="Process.uid" type="byte">3</variable>
+			<variable name="Process.mem" type="byte[5]">[1, 0, 1, 1, 0, ]</variable>
+			<variable name="Process.add" type="byte[5]">[3, 1, 4, 5, 2, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+		</queue>
+	</rebec>
+	<rebec name="m">
+		<statevariables>
+			<variable name="Memory.reg" type="byte[5]">[1, 1, 1, 1, 0, ]</variable>
+			<variable name="Memory.swap" type="byte[5]">[0, 0, 0, 0, 0, ]</variable>
+			<variable name="Memory.p" type="byte[3]">[0, 0, 0, ]</variable>
+			<variable name="Memory.cntr" type="byte">1</variable>
+			<variable name="Memory.cv" type="byte">3</variable>
+		</statevariables>
+		<queue>
+			<message sender="p3">receive(3, 3)</message>
+		</queue>
+	</rebec>
+</state>
+<transition source="25" destination="26"> <messageserver sender="p3" owner="m" title="RECEIVE"/></transition>
+<state id="26" atomicpropositions="mutex1,mutex2,mutex3," >
+	<rebec name="p1">
+		<statevariables>
+			<variable name="Process.uid" type="byte">1</variable>
+			<variable name="Process.mem" type="byte[5]">[1, 1, 1, 0, 0, ]</variable>
+			<variable name="Process.add" type="byte[5]">[1, 2, 3, 4, 5, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+			<message sender="m">get(1, 3)</message>
+		</queue>
+	</rebec>
+	<rebec name="p2">
+		<statevariables>
+			<variable name="Process.uid" type="byte">2</variable>
+			<variable name="Process.mem" type="byte[5]">[0, 1, 1, 0, 1, ]</variable>
+			<variable name="Process.add" type="byte[5]">[2, 3, 5, 1, 4, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+			<message sender="m">get(1, 3)</message>
+		</queue>
+	</rebec>
+	<rebec name="p3">
+		<statevariables>
+			<variable name="Process.uid" type="byte">3</variable>
+			<variable name="Process.mem" type="byte[5]">[1, 0, 1, 1, 0, ]</variable>
+			<variable name="Process.add" type="byte[5]">[3, 1, 4, 5, 2, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+			<message sender="m">get(1, 3)</message>
+		</queue>
+	</rebec>
+	<rebec name="m">
+		<statevariables>
+			<variable name="Memory.reg" type="byte[5]">[1, 1, 1, 1, 0, ]</variable>
+			<variable name="Memory.swap" type="byte[5]">[0, 0, 0, 0, 0, ]</variable>
+			<variable name="Memory.p" type="byte[3]">[0, 0, 0, ]</variable>
+			<variable name="Memory.cntr" type="byte">3</variable>
+			<variable name="Memory.cv" type="byte">3</variable>
+		</statevariables>
+		<queue>
+		</queue>
+	</rebec>
+</state>
+<transition source="26" destination="27"> <messageserver sender="m" owner="p1" title="GET"/></transition>
+<state id="27" atomicpropositions="mutex1,mutex2,mutex3," >
+	<rebec name="p1">
+		<statevariables>
+			<variable name="Process.uid" type="byte">1</variable>
+			<variable name="Process.mem" type="byte[5]">[1, 1, 1, 1, 0, ]</variable>
+			<variable name="Process.add" type="byte[5]">[1, 2, 3, 4, 5, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+		</queue>
+	</rebec>
+	<rebec name="p2">
+		<statevariables>
+			<variable name="Process.uid" type="byte">2</variable>
+			<variable name="Process.mem" type="byte[5]">[0, 1, 1, 0, 1, ]</variable>
+			<variable name="Process.add" type="byte[5]">[2, 3, 5, 1, 4, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+			<message sender="m">get(1, 3)</message>
+		</queue>
+	</rebec>
+	<rebec name="p3">
+		<statevariables>
+			<variable name="Process.uid" type="byte">3</variable>
+			<variable name="Process.mem" type="byte[5]">[1, 0, 1, 1, 0, ]</variable>
+			<variable name="Process.add" type="byte[5]">[3, 1, 4, 5, 2, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+			<message sender="m">get(1, 3)</message>
+		</queue>
+	</rebec>
+	<rebec name="m">
+		<statevariables>
+			<variable name="Memory.reg" type="byte[5]">[1, 1, 1, 1, 0, ]</variable>
+			<variable name="Memory.swap" type="byte[5]">[0, 0, 0, 0, 0, ]</variable>
+			<variable name="Memory.p" type="byte[3]">[0, 0, 0, ]</variable>
+			<variable name="Memory.cntr" type="byte">3</variable>
+			<variable name="Memory.cv" type="byte">3</variable>
+		</statevariables>
+		<queue>
+			<message sender="p1">receive(1, 4)</message>
+		</queue>
+	</rebec>
+</state>
+<transition source="27" destination="28"> <messageserver sender="m" owner="p2" title="GET"/></transition>
+<state id="28" atomicpropositions="mutex1,mutex2,mutex3," >
+	<rebec name="p1">
+		<statevariables>
+			<variable name="Process.uid" type="byte">1</variable>
+			<variable name="Process.mem" type="byte[5]">[1, 1, 1, 1, 0, ]</variable>
+			<variable name="Process.add" type="byte[5]">[1, 2, 3, 4, 5, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+		</queue>
+	</rebec>
+	<rebec name="p2">
+		<statevariables>
+			<variable name="Process.uid" type="byte">2</variable>
+			<variable name="Process.mem" type="byte[5]">[1, 1, 1, 0, 1, ]</variable>
+			<variable name="Process.add" type="byte[5]">[2, 3, 5, 1, 4, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+		</queue>
+	</rebec>
+	<rebec name="p3">
+		<statevariables>
+			<variable name="Process.uid" type="byte">3</variable>
+			<variable name="Process.mem" type="byte[5]">[1, 0, 1, 1, 0, ]</variable>
+			<variable name="Process.add" type="byte[5]">[3, 1, 4, 5, 2, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+			<message sender="m">get(1, 3)</message>
+		</queue>
+	</rebec>
+	<rebec name="m">
+		<statevariables>
+			<variable name="Memory.reg" type="byte[5]">[1, 1, 1, 1, 0, ]</variable>
+			<variable name="Memory.swap" type="byte[5]">[0, 0, 0, 0, 0, ]</variable>
+			<variable name="Memory.p" type="byte[3]">[0, 0, 0, ]</variable>
+			<variable name="Memory.cntr" type="byte">3</variable>
+			<variable name="Memory.cv" type="byte">3</variable>
+		</statevariables>
+		<queue>
+			<message sender="p1">receive(1, 4)</message>
+			<message sender="p2">receive(2, 4)</message>
+		</queue>
+	</rebec>
+</state>
+<transition source="28" destination="29"> <messageserver sender="m" owner="p3" title="GET"/></transition>
+<state id="29" atomicpropositions="mutex1,mutex2,mutex3," >
+	<rebec name="p1">
+		<statevariables>
+			<variable name="Process.uid" type="byte">1</variable>
+			<variable name="Process.mem" type="byte[5]">[1, 1, 1, 1, 0, ]</variable>
+			<variable name="Process.add" type="byte[5]">[1, 2, 3, 4, 5, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+		</queue>
+	</rebec>
+	<rebec name="p2">
+		<statevariables>
+			<variable name="Process.uid" type="byte">2</variable>
+			<variable name="Process.mem" type="byte[5]">[1, 1, 1, 0, 1, ]</variable>
+			<variable name="Process.add" type="byte[5]">[2, 3, 5, 1, 4, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+		</queue>
+	</rebec>
+	<rebec name="p3">
+		<statevariables>
+			<variable name="Process.uid" type="byte">3</variable>
+			<variable name="Process.mem" type="byte[5]">[1, 0, 1, 1, 1, ]</variable>
+			<variable name="Process.add" type="byte[5]">[3, 1, 4, 5, 2, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+		</queue>
+	</rebec>
+	<rebec name="m">
+		<statevariables>
+			<variable name="Memory.reg" type="byte[5]">[1, 1, 1, 1, 0, ]</variable>
+			<variable name="Memory.swap" type="byte[5]">[0, 0, 0, 0, 0, ]</variable>
+			<variable name="Memory.p" type="byte[3]">[0, 0, 0, ]</variable>
+			<variable name="Memory.cntr" type="byte">3</variable>
+			<variable name="Memory.cv" type="byte">3</variable>
+		</statevariables>
+		<queue>
+			<message sender="p1">receive(1, 4)</message>
+			<message sender="p2">receive(2, 4)</message>
+			<message sender="p3">receive(3, 4)</message>
+		</queue>
+	</rebec>
+</state>
+<transition source="29" destination="30"> <messageserver sender="p1" owner="m" title="RECEIVE"/></transition>
+<state id="30" atomicpropositions="mutex1,mutex2,mutex3," >
+	<rebec name="p1">
+		<statevariables>
+			<variable name="Process.uid" type="byte">1</variable>
+			<variable name="Process.mem" type="byte[5]">[1, 1, 1, 1, 0, ]</variable>
+			<variable name="Process.add" type="byte[5]">[1, 2, 3, 4, 5, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+		</queue>
+	</rebec>
+	<rebec name="p2">
+		<statevariables>
+			<variable name="Process.uid" type="byte">2</variable>
+			<variable name="Process.mem" type="byte[5]">[1, 1, 1, 0, 1, ]</variable>
+			<variable name="Process.add" type="byte[5]">[2, 3, 5, 1, 4, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+		</queue>
+	</rebec>
+	<rebec name="p3">
+		<statevariables>
+			<variable name="Process.uid" type="byte">3</variable>
+			<variable name="Process.mem" type="byte[5]">[1, 0, 1, 1, 1, ]</variable>
+			<variable name="Process.add" type="byte[5]">[3, 1, 4, 5, 2, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+		</queue>
+	</rebec>
+	<rebec name="m">
+		<statevariables>
+			<variable name="Memory.reg" type="byte[5]">[1, 1, 1, 1, 1, ]</variable>
+			<variable name="Memory.swap" type="byte[5]">[0, 0, 0, 0, 0, ]</variable>
+			<variable name="Memory.p" type="byte[3]">[0, 0, 0, ]</variable>
+			<variable name="Memory.cntr" type="byte">2</variable>
+			<variable name="Memory.cv" type="byte">3</variable>
+		</statevariables>
+		<queue>
+			<message sender="p2">receive(2, 4)</message>
+			<message sender="p3">receive(3, 4)</message>
+		</queue>
+	</rebec>
+</state>
+<transition source="30" destination="31"> <messageserver sender="p2" owner="m" title="RECEIVE"/></transition>
+<state id="31" atomicpropositions="mutex1,mutex2,mutex3," >
+	<rebec name="p1">
+		<statevariables>
+			<variable name="Process.uid" type="byte">1</variable>
+			<variable name="Process.mem" type="byte[5]">[1, 1, 1, 1, 0, ]</variable>
+			<variable name="Process.add" type="byte[5]">[1, 2, 3, 4, 5, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+		</queue>
+	</rebec>
+	<rebec name="p2">
+		<statevariables>
+			<variable name="Process.uid" type="byte">2</variable>
+			<variable name="Process.mem" type="byte[5]">[1, 1, 1, 0, 1, ]</variable>
+			<variable name="Process.add" type="byte[5]">[2, 3, 5, 1, 4, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+		</queue>
+	</rebec>
+	<rebec name="p3">
+		<statevariables>
+			<variable name="Process.uid" type="byte">3</variable>
+			<variable name="Process.mem" type="byte[5]">[1, 0, 1, 1, 1, ]</variable>
+			<variable name="Process.add" type="byte[5]">[3, 1, 4, 5, 2, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+		</queue>
+	</rebec>
+	<rebec name="m">
+		<statevariables>
+			<variable name="Memory.reg" type="byte[5]">[1, 1, 1, 1, 1, ]</variable>
+			<variable name="Memory.swap" type="byte[5]">[0, 0, 0, 0, 0, ]</variable>
+			<variable name="Memory.p" type="byte[3]">[0, 0, 0, ]</variable>
+			<variable name="Memory.cntr" type="byte">1</variable>
+			<variable name="Memory.cv" type="byte">3</variable>
+		</statevariables>
+		<queue>
+			<message sender="p3">receive(3, 4)</message>
+		</queue>
+	</rebec>
+</state>
+<transition source="31" destination="32"> <messageserver sender="p3" owner="m" title="RECEIVE"/></transition>
+<state id="32" atomicpropositions="mutex1,mutex2,mutex3," >
+	<rebec name="p1">
+		<statevariables>
+			<variable name="Process.uid" type="byte">1</variable>
+			<variable name="Process.mem" type="byte[5]">[1, 1, 1, 1, 0, ]</variable>
+			<variable name="Process.add" type="byte[5]">[1, 2, 3, 4, 5, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+			<message sender="m">get(1, 4)</message>
+		</queue>
+	</rebec>
+	<rebec name="p2">
+		<statevariables>
+			<variable name="Process.uid" type="byte">2</variable>
+			<variable name="Process.mem" type="byte[5]">[1, 1, 1, 0, 1, ]</variable>
+			<variable name="Process.add" type="byte[5]">[2, 3, 5, 1, 4, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+			<message sender="m">get(1, 4)</message>
+		</queue>
+	</rebec>
+	<rebec name="p3">
+		<statevariables>
+			<variable name="Process.uid" type="byte">3</variable>
+			<variable name="Process.mem" type="byte[5]">[1, 0, 1, 1, 1, ]</variable>
+			<variable name="Process.add" type="byte[5]">[3, 1, 4, 5, 2, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+			<message sender="m">get(1, 4)</message>
+		</queue>
+	</rebec>
+	<rebec name="m">
+		<statevariables>
+			<variable name="Memory.reg" type="byte[5]">[1, 1, 1, 1, 1, ]</variable>
+			<variable name="Memory.swap" type="byte[5]">[0, 0, 0, 0, 0, ]</variable>
+			<variable name="Memory.p" type="byte[3]">[0, 0, 0, ]</variable>
+			<variable name="Memory.cntr" type="byte">3</variable>
+			<variable name="Memory.cv" type="byte">3</variable>
+		</statevariables>
+		<queue>
+		</queue>
+	</rebec>
+</state>
+<transition source="32" destination="33"> <messageserver sender="m" owner="p1" title="GET"/></transition>
+<state id="33" atomicpropositions="pw1,mutex1,mutex2,mutex3," >
+	<rebec name="p1">
+		<statevariables>
+			<variable name="Process.uid" type="byte">1</variable>
+			<variable name="Process.mem" type="byte[5]">[1, 1, 1, 1, 1, ]</variable>
+			<variable name="Process.add" type="byte[5]">[1, 2, 3, 4, 5, ]</variable>
+			<variable name="Process.winner" type="boolean">true</variable>
+		</statevariables>
+		<queue>
+			<message sender="p1">crit()</message>
+		</queue>
+	</rebec>
+	<rebec name="p2">
+		<statevariables>
+			<variable name="Process.uid" type="byte">2</variable>
+			<variable name="Process.mem" type="byte[5]">[1, 1, 1, 0, 1, ]</variable>
+			<variable name="Process.add" type="byte[5]">[2, 3, 5, 1, 4, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+			<message sender="m">get(1, 4)</message>
+		</queue>
+	</rebec>
+	<rebec name="p3">
+		<statevariables>
+			<variable name="Process.uid" type="byte">3</variable>
+			<variable name="Process.mem" type="byte[5]">[1, 0, 1, 1, 1, ]</variable>
+			<variable name="Process.add" type="byte[5]">[3, 1, 4, 5, 2, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+			<message sender="m">get(1, 4)</message>
+		</queue>
+	</rebec>
+	<rebec name="m">
+		<statevariables>
+			<variable name="Memory.reg" type="byte[5]">[1, 1, 1, 1, 1, ]</variable>
+			<variable name="Memory.swap" type="byte[5]">[0, 0, 0, 0, 0, ]</variable>
+			<variable name="Memory.p" type="byte[3]">[0, 0, 0, ]</variable>
+			<variable name="Memory.cntr" type="byte">3</variable>
+			<variable name="Memory.cv" type="byte">3</variable>
+		</statevariables>
+		<queue>
+		</queue>
+	</rebec>
+</state>
+<transition source="33" destination="34"> <messageserver sender="p1" owner="p1" title="CRIT"/></transition>
+<state id="34" atomicpropositions="mutex1,mutex2,mutex3," >
+	<rebec name="p1">
+		<statevariables>
+			<variable name="Process.uid" type="byte">1</variable>
+			<variable name="Process.mem" type="byte[5]">[1, 1, 1, 1, 1, ]</variable>
+			<variable name="Process.add" type="byte[5]">[1, 2, 3, 4, 5, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+		</queue>
+	</rebec>
+	<rebec name="p2">
+		<statevariables>
+			<variable name="Process.uid" type="byte">2</variable>
+			<variable name="Process.mem" type="byte[5]">[1, 1, 1, 0, 1, ]</variable>
+			<variable name="Process.add" type="byte[5]">[2, 3, 5, 1, 4, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+			<message sender="m">get(1, 4)</message>
+		</queue>
+	</rebec>
+	<rebec name="p3">
+		<statevariables>
+			<variable name="Process.uid" type="byte">3</variable>
+			<variable name="Process.mem" type="byte[5]">[1, 0, 1, 1, 1, ]</variable>
+			<variable name="Process.add" type="byte[5]">[3, 1, 4, 5, 2, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+			<message sender="m">get(1, 4)</message>
+		</queue>
+	</rebec>
+	<rebec name="m">
+		<statevariables>
+			<variable name="Memory.reg" type="byte[5]">[1, 1, 1, 1, 1, ]</variable>
+			<variable name="Memory.swap" type="byte[5]">[0, 0, 0, 0, 0, ]</variable>
+			<variable name="Memory.p" type="byte[3]">[0, 0, 0, ]</variable>
+			<variable name="Memory.cntr" type="byte">3</variable>
+			<variable name="Memory.cv" type="byte">3</variable>
+		</statevariables>
+		<queue>
+			<message sender="p1">result(true, false, 1)</message>
+		</queue>
+	</rebec>
+</state>
+<transition source="34" destination="35"> <messageserver sender="m" owner="p2" title="GET"/></transition>
+<state id="35" atomicpropositions="mutex1,mutex2,mutex3," >
+	<rebec name="p1">
+		<statevariables>
+			<variable name="Process.uid" type="byte">1</variable>
+			<variable name="Process.mem" type="byte[5]">[1, 1, 1, 1, 1, ]</variable>
+			<variable name="Process.add" type="byte[5]">[1, 2, 3, 4, 5, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+		</queue>
+	</rebec>
+	<rebec name="p2">
+		<statevariables>
+			<variable name="Process.uid" type="byte">2</variable>
+			<variable name="Process.mem" type="byte[5]">[1, 1, 1, 1, 1, ]</variable>
+			<variable name="Process.add" type="byte[5]">[2, 3, 5, 1, 4, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+		</queue>
+	</rebec>
+	<rebec name="p3">
+		<statevariables>
+			<variable name="Process.uid" type="byte">3</variable>
+			<variable name="Process.mem" type="byte[5]">[1, 0, 1, 1, 1, ]</variable>
+			<variable name="Process.add" type="byte[5]">[3, 1, 4, 5, 2, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+			<message sender="m">get(1, 4)</message>
+		</queue>
+	</rebec>
+	<rebec name="m">
+		<statevariables>
+			<variable name="Memory.reg" type="byte[5]">[1, 1, 1, 1, 1, ]</variable>
+			<variable name="Memory.swap" type="byte[5]">[0, 0, 0, 0, 0, ]</variable>
+			<variable name="Memory.p" type="byte[3]">[0, 0, 0, ]</variable>
+			<variable name="Memory.cntr" type="byte">3</variable>
+			<variable name="Memory.cv" type="byte">3</variable>
+		</statevariables>
+		<queue>
+			<message sender="p1">result(true, false, 1)</message>
+			<message sender="p2">result(false, true, 2)</message>
+		</queue>
+	</rebec>
+</state>
+<transition source="35" destination="36"> <messageserver sender="m" owner="p3" title="GET"/></transition>
+<state id="36" atomicpropositions="mutex1,mutex2,mutex3," >
+	<rebec name="p1">
+		<statevariables>
+			<variable name="Process.uid" type="byte">1</variable>
+			<variable name="Process.mem" type="byte[5]">[1, 1, 1, 1, 1, ]</variable>
+			<variable name="Process.add" type="byte[5]">[1, 2, 3, 4, 5, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+		</queue>
+	</rebec>
+	<rebec name="p2">
+		<statevariables>
+			<variable name="Process.uid" type="byte">2</variable>
+			<variable name="Process.mem" type="byte[5]">[1, 1, 1, 1, 1, ]</variable>
+			<variable name="Process.add" type="byte[5]">[2, 3, 5, 1, 4, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+		</queue>
+	</rebec>
+	<rebec name="p3">
+		<statevariables>
+			<variable name="Process.uid" type="byte">3</variable>
+			<variable name="Process.mem" type="byte[5]">[1, 1, 1, 1, 1, ]</variable>
+			<variable name="Process.add" type="byte[5]">[3, 1, 4, 5, 2, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+		</queue>
+	</rebec>
+	<rebec name="m">
+		<statevariables>
+			<variable name="Memory.reg" type="byte[5]">[1, 1, 1, 1, 1, ]</variable>
+			<variable name="Memory.swap" type="byte[5]">[0, 0, 0, 0, 0, ]</variable>
+			<variable name="Memory.p" type="byte[3]">[0, 0, 0, ]</variable>
+			<variable name="Memory.cntr" type="byte">3</variable>
+			<variable name="Memory.cv" type="byte">3</variable>
+		</statevariables>
+		<queue>
+			<message sender="p1">result(true, false, 1)</message>
+			<message sender="p2">result(false, true, 2)</message>
+			<message sender="p3">result(false, true, 3)</message>
+		</queue>
+	</rebec>
+</state>
+<transition source="36" destination="37"> <messageserver sender="p1" owner="m" title="RESULT"/></transition>
+<state id="37" atomicpropositions="mutex1,mutex2,mutex3," >
+	<rebec name="p1">
+		<statevariables>
+			<variable name="Process.uid" type="byte">1</variable>
+			<variable name="Process.mem" type="byte[5]">[1, 1, 1, 1, 1, ]</variable>
+			<variable name="Process.add" type="byte[5]">[1, 2, 3, 4, 5, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+		</queue>
+	</rebec>
+	<rebec name="p2">
+		<statevariables>
+			<variable name="Process.uid" type="byte">2</variable>
+			<variable name="Process.mem" type="byte[5]">[1, 1, 1, 1, 1, ]</variable>
+			<variable name="Process.add" type="byte[5]">[2, 3, 5, 1, 4, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+		</queue>
+	</rebec>
+	<rebec name="p3">
+		<statevariables>
+			<variable name="Process.uid" type="byte">3</variable>
+			<variable name="Process.mem" type="byte[5]">[1, 1, 1, 1, 1, ]</variable>
+			<variable name="Process.add" type="byte[5]">[3, 1, 4, 5, 2, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+		</queue>
+	</rebec>
+	<rebec name="m">
+		<statevariables>
+			<variable name="Memory.reg" type="byte[5]">[1, 1, 1, 1, 1, ]</variable>
+			<variable name="Memory.swap" type="byte[5]">[0, 0, 0, 0, 0, ]</variable>
+			<variable name="Memory.p" type="byte[3]">[3, 0, 0, ]</variable>
+			<variable name="Memory.cntr" type="byte">3</variable>
+			<variable name="Memory.cv" type="byte">3</variable>
+		</statevariables>
+		<queue>
+			<message sender="p2">result(false, true, 2)</message>
+			<message sender="p3">result(false, true, 3)</message>
+		</queue>
+	</rebec>
+</state>
+<transition source="37" destination="38"> <messageserver sender="p2" owner="m" title="RESULT"/></transition>
+<state id="38" atomicpropositions="mutex1,mutex2,mutex3," >
+	<rebec name="p1">
+		<statevariables>
+			<variable name="Process.uid" type="byte">1</variable>
+			<variable name="Process.mem" type="byte[5]">[1, 1, 1, 1, 1, ]</variable>
+			<variable name="Process.add" type="byte[5]">[1, 2, 3, 4, 5, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+		</queue>
+	</rebec>
+	<rebec name="p2">
+		<statevariables>
+			<variable name="Process.uid" type="byte">2</variable>
+			<variable name="Process.mem" type="byte[5]">[1, 1, 1, 1, 1, ]</variable>
+			<variable name="Process.add" type="byte[5]">[2, 3, 5, 1, 4, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+		</queue>
+	</rebec>
+	<rebec name="p3">
+		<statevariables>
+			<variable name="Process.uid" type="byte">3</variable>
+			<variable name="Process.mem" type="byte[5]">[1, 1, 1, 1, 1, ]</variable>
+			<variable name="Process.add" type="byte[5]">[3, 1, 4, 5, 2, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+		</queue>
+	</rebec>
+	<rebec name="m">
+		<statevariables>
+			<variable name="Memory.reg" type="byte[5]">[1, 1, 1, 1, 1, ]</variable>
+			<variable name="Memory.swap" type="byte[5]">[0, 0, 0, 0, 0, ]</variable>
+			<variable name="Memory.p" type="byte[3]">[3, 1, 0, ]</variable>
+			<variable name="Memory.cntr" type="byte">3</variable>
+			<variable name="Memory.cv" type="byte">3</variable>
+		</statevariables>
+		<queue>
+			<message sender="p3">result(false, true, 3)</message>
+		</queue>
+	</rebec>
+</state>
+<transition source="38" destination="39"> <messageserver sender="p3" owner="m" title="RESULT"/></transition>
+<state id="39" atomicpropositions="mutex1,mutex2,mutex3," >
+	<rebec name="p1">
+		<statevariables>
+			<variable name="Process.uid" type="byte">1</variable>
+			<variable name="Process.mem" type="byte[5]">[1, 1, 1, 1, 1, ]</variable>
+			<variable name="Process.add" type="byte[5]">[1, 2, 3, 4, 5, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+			<message sender="m">starter()</message>
+		</queue>
+	</rebec>
+	<rebec name="p2">
+		<statevariables>
+			<variable name="Process.uid" type="byte">2</variable>
+			<variable name="Process.mem" type="byte[5]">[1, 1, 1, 1, 1, ]</variable>
+			<variable name="Process.add" type="byte[5]">[2, 3, 5, 1, 4, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+			<message sender="m">starter()</message>
+		</queue>
+	</rebec>
+	<rebec name="p3">
+		<statevariables>
+			<variable name="Process.uid" type="byte">3</variable>
+			<variable name="Process.mem" type="byte[5]">[1, 1, 1, 1, 1, ]</variable>
+			<variable name="Process.add" type="byte[5]">[3, 1, 4, 5, 2, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+			<message sender="m">starter()</message>
+		</queue>
+	</rebec>
+	<rebec name="m">
+		<statevariables>
+			<variable name="Memory.reg" type="byte[5]">[0, 0, 0, 0, 0, ]</variable>
+			<variable name="Memory.swap" type="byte[5]">[0, 0, 0, 0, 0, ]</variable>
+			<variable name="Memory.p" type="byte[3]">[0, 0, 0, ]</variable>
+			<variable name="Memory.cntr" type="byte">3</variable>
+			<variable name="Memory.cv" type="byte">3</variable>
+		</statevariables>
+		<queue>
+		</queue>
+	</rebec>
+</state>
+<transition source="39" destination="40"> <messageserver sender="m" owner="p1" title="STARTER"/></transition>
+<state id="40" atomicpropositions="mutex1,mutex2,mutex3," >
+	<rebec name="p1">
+		<statevariables>
+			<variable name="Process.uid" type="byte">1</variable>
+			<variable name="Process.mem" type="byte[5]">[0, 0, 0, 0, 0, ]</variable>
+			<variable name="Process.add" type="byte[5]">[1, 2, 3, 4, 5, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+		</queue>
+	</rebec>
+	<rebec name="p2">
+		<statevariables>
+			<variable name="Process.uid" type="byte">2</variable>
+			<variable name="Process.mem" type="byte[5]">[1, 1, 1, 1, 1, ]</variable>
+			<variable name="Process.add" type="byte[5]">[2, 3, 5, 1, 4, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+			<message sender="m">starter()</message>
+		</queue>
+	</rebec>
+	<rebec name="p3">
+		<statevariables>
+			<variable name="Process.uid" type="byte">3</variable>
+			<variable name="Process.mem" type="byte[5]">[1, 1, 1, 1, 1, ]</variable>
+			<variable name="Process.add" type="byte[5]">[3, 1, 4, 5, 2, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+			<message sender="m">starter()</message>
+		</queue>
+	</rebec>
+	<rebec name="m">
+		<statevariables>
+			<variable name="Memory.reg" type="byte[5]">[0, 0, 0, 0, 0, ]</variable>
+			<variable name="Memory.swap" type="byte[5]">[0, 0, 0, 0, 0, ]</variable>
+			<variable name="Memory.p" type="byte[3]">[0, 0, 0, ]</variable>
+			<variable name="Memory.cntr" type="byte">3</variable>
+			<variable name="Memory.cv" type="byte">3</variable>
+		</statevariables>
+		<queue>
+			<message sender="p1">receive(1, 0)</message>
+		</queue>
+	</rebec>
+</state>
+<transition source="40" destination="41"> <messageserver sender="m" owner="p2" title="STARTER"/></transition>
+<state id="41" atomicpropositions="mutex1,mutex2,mutex3," >
+	<rebec name="p1">
+		<statevariables>
+			<variable name="Process.uid" type="byte">1</variable>
+			<variable name="Process.mem" type="byte[5]">[0, 0, 0, 0, 0, ]</variable>
+			<variable name="Process.add" type="byte[5]">[1, 2, 3, 4, 5, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+		</queue>
+	</rebec>
+	<rebec name="p2">
+		<statevariables>
+			<variable name="Process.uid" type="byte">2</variable>
+			<variable name="Process.mem" type="byte[5]">[0, 0, 0, 0, 0, ]</variable>
+			<variable name="Process.add" type="byte[5]">[2, 3, 5, 1, 4, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+		</queue>
+	</rebec>
+	<rebec name="p3">
+		<statevariables>
+			<variable name="Process.uid" type="byte">3</variable>
+			<variable name="Process.mem" type="byte[5]">[1, 1, 1, 1, 1, ]</variable>
+			<variable name="Process.add" type="byte[5]">[3, 1, 4, 5, 2, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+			<message sender="m">starter()</message>
+		</queue>
+	</rebec>
+	<rebec name="m">
+		<statevariables>
+			<variable name="Memory.reg" type="byte[5]">[0, 0, 0, 0, 0, ]</variable>
+			<variable name="Memory.swap" type="byte[5]">[0, 0, 0, 0, 0, ]</variable>
+			<variable name="Memory.p" type="byte[3]">[0, 0, 0, ]</variable>
+			<variable name="Memory.cntr" type="byte">3</variable>
+			<variable name="Memory.cv" type="byte">3</variable>
+		</statevariables>
+		<queue>
+			<message sender="p1">receive(1, 0)</message>
+			<message sender="p2">receive(2, 0)</message>
+		</queue>
+	</rebec>
+</state>
+<transition source="41" destination="42"> <messageserver sender="p1" owner="m" title="RECEIVE"/></transition>
+<state id="42" atomicpropositions="mutex1,mutex2,mutex3," >
+	<rebec name="p1">
+		<statevariables>
+			<variable name="Process.uid" type="byte">1</variable>
+			<variable name="Process.mem" type="byte[5]">[0, 0, 0, 0, 0, ]</variable>
+			<variable name="Process.add" type="byte[5]">[1, 2, 3, 4, 5, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+		</queue>
+	</rebec>
+	<rebec name="p2">
+		<statevariables>
+			<variable name="Process.uid" type="byte">2</variable>
+			<variable name="Process.mem" type="byte[5]">[0, 0, 0, 0, 0, ]</variable>
+			<variable name="Process.add" type="byte[5]">[2, 3, 5, 1, 4, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+		</queue>
+	</rebec>
+	<rebec name="p3">
+		<statevariables>
+			<variable name="Process.uid" type="byte">3</variable>
+			<variable name="Process.mem" type="byte[5]">[1, 1, 1, 1, 1, ]</variable>
+			<variable name="Process.add" type="byte[5]">[3, 1, 4, 5, 2, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+			<message sender="m">starter()</message>
+		</queue>
+	</rebec>
+	<rebec name="m">
+		<statevariables>
+			<variable name="Memory.reg" type="byte[5]">[1, 0, 0, 0, 0, ]</variable>
+			<variable name="Memory.swap" type="byte[5]">[0, 0, 0, 0, 0, ]</variable>
+			<variable name="Memory.p" type="byte[3]">[0, 0, 0, ]</variable>
+			<variable name="Memory.cntr" type="byte">2</variable>
+			<variable name="Memory.cv" type="byte">3</variable>
+		</statevariables>
+		<queue>
+			<message sender="p2">receive(2, 0)</message>
+		</queue>
+	</rebec>
+</state>
+<transition source="42" destination="43"> <messageserver sender="p2" owner="m" title="RECEIVE"/></transition>
+<state id="43" atomicpropositions="mutex1,mutex2,mutex3," >
+	<rebec name="p1">
+		<statevariables>
+			<variable name="Process.uid" type="byte">1</variable>
+			<variable name="Process.mem" type="byte[5]">[0, 0, 0, 0, 0, ]</variable>
+			<variable name="Process.add" type="byte[5]">[1, 2, 3, 4, 5, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+		</queue>
+	</rebec>
+	<rebec name="p2">
+		<statevariables>
+			<variable name="Process.uid" type="byte">2</variable>
+			<variable name="Process.mem" type="byte[5]">[0, 0, 0, 0, 0, ]</variable>
+			<variable name="Process.add" type="byte[5]">[2, 3, 5, 1, 4, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+		</queue>
+	</rebec>
+	<rebec name="p3">
+		<statevariables>
+			<variable name="Process.uid" type="byte">3</variable>
+			<variable name="Process.mem" type="byte[5]">[1, 1, 1, 1, 1, ]</variable>
+			<variable name="Process.add" type="byte[5]">[3, 1, 4, 5, 2, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+			<message sender="m">starter()</message>
+		</queue>
+	</rebec>
+	<rebec name="m">
+		<statevariables>
+			<variable name="Memory.reg" type="byte[5]">[1, 0, 0, 0, 0, ]</variable>
+			<variable name="Memory.swap" type="byte[5]">[0, 0, 0, 0, 0, ]</variable>
+			<variable name="Memory.p" type="byte[3]">[0, 0, 0, ]</variable>
+			<variable name="Memory.cntr" type="byte">1</variable>
+			<variable name="Memory.cv" type="byte">3</variable>
+		</statevariables>
+		<queue>
+		</queue>
+	</rebec>
+</state>
+<transition source="43" destination="7"> <messageserver sender="m" owner="p3" title="STARTER"/></transition>
+<state id="7" atomicpropositions="mutex1,mutex2,mutex3," >
+	<rebec name="p1">
+		<statevariables>
+			<variable name="Process.uid" type="byte">1</variable>
+			<variable name="Process.mem" type="byte[5]">[0, 0, 0, 0, 0, ]</variable>
+			<variable name="Process.add" type="byte[5]">[1, 2, 3, 4, 5, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+		</queue>
+	</rebec>
+	<rebec name="p2">
+		<statevariables>
+			<variable name="Process.uid" type="byte">2</variable>
+			<variable name="Process.mem" type="byte[5]">[0, 0, 0, 0, 0, ]</variable>
+			<variable name="Process.add" type="byte[5]">[2, 3, 5, 1, 4, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+		</queue>
+	</rebec>
+	<rebec name="p3">
+		<statevariables>
+			<variable name="Process.uid" type="byte">3</variable>
+			<variable name="Process.mem" type="byte[5]">[0, 0, 0, 0, 0, ]</variable>
+			<variable name="Process.add" type="byte[5]">[3, 1, 4, 5, 2, ]</variable>
+			<variable name="Process.winner" type="boolean">false</variable>
+		</statevariables>
+		<queue>
+		</queue>
+	</rebec>
+	<rebec name="m">
+		<statevariables>
+			<variable name="Memory.reg" type="byte[5]">[1, 0, 0, 0, 0, ]</variable>
+			<variable name="Memory.swap" type="byte[5]">[0, 0, 0, 0, 0, ]</variable>
+			<variable name="Memory.p" type="byte[3]">[0, 0, 0, ]</variable>
+			<variable name="Memory.cntr" type="byte">1</variable>
+			<variable name="Memory.cv" type="byte">3</variable>
+		</statevariables>
+		<queue>
+			<message sender="p3">receive(3, 0)</message>
+		</queue>
+	</rebec>
+</state>
+</counter-example-trace>
+</model-checking-report>
