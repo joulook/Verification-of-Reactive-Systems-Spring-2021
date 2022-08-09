@@ -1,0 +1,19 @@
+property { 
+
+	define{
+		pw1 = p1.winner;
+		pw2 = p2.winner;
+		pw3 = p3.winner;
+		
+		mutex1 = !(p1.winner && p2.winner);
+		mutex2 = !(p1.winner && p3.winner);
+		mutex3 = !(p2.winner && p3.winner);
+	}
+	
+	LTL{
+		Safty: G(mutex1) && G(mutex2) && G(mutex3);
+		Deadlock:  G(F (pw1 || pw2 || pw3));
+		Liveness: F(pw1) && F(pw2) && F(pw3);
+	}
+
+}

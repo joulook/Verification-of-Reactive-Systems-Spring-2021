@@ -1,0 +1,18 @@
+<model-checking-report>
+<system-info>
+	<total-spent-time>6</total-spent-time>
+	<reached-states>90121</reached-states>
+	<reached-transitions>352665</reached-transitions>
+	<consumed-mem>5767744</consumed-mem>
+</system-info>
+<checked-property>
+	<type>LTL</type>
+	<name>Deadlock</name>
+	<result>satisfied</result>
+<options>
+	<option>Nested DFS</option>
+</options>
+</checked-property>
+<counter-example-trace>
+</counter-example-trace>
+</model-checking-report>
